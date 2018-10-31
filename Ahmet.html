@@ -1,53 +1,111 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Complete Bootstrap 4 Website Layout</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-	<link href="style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>one page</title>
+    <link rel="stylesheet" href="artvin.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 </head>
-<style>
-    ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: blue;
-}
-
-</style>
 <body>
+<nav>
+    <a href="#">HOME</a>
+    <a href="#">ABOUT</a>
+    <a href="#">PLACES</a>
+    <a href="#">SERVICES</a>
+    <a href="#">ACTIVITIES</a>
+    <a href="#">CONTACT</a>
+</nav>
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
-    <div class="container-fluid">
-     <button class="navbar-toggler" type="button" data-toggle="collapse"
-     data-target="#navbarResponsive">
-    <span class="navbar-toggler-icon"></span>
-    </button>
-</div class="collapse navbar-collapse" id="navbarResponsive">
-<ul class="navbar-nav ml-auto">
-<li class="nav-item">
-    <a class="nav-link" href="#">Home</a>
-    <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Classes</a>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Programs</a>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-</li>
-</ul>
-</div>
+<div id="gor1" class="gorsel">
+    <div class="mainPage mainText">
+            <article>
+                    <hgroup>
+                        <h1>Artvin</h1>
+                        <h2>welcome to artvin</h2>
+                    </hgroup>
+                    <section>
+                        <h1>overwiev</h1>
+                        <p>like all cities extending along the beautiful Black Sea coast, 
+                                Artvin is a lovely district</p>
+                                <aside>
+                                        <p>64 kms southeast <p>of Hopa, ps region,</p>
+                                    </aside>
+                    </section>
+                    <section></p>
+                        <p>
+
+                        </p>
+                        <h1>history</h1>
+                        <p>The area has a rich history but has not been studied extensively by archaeologists in recent decades. </p>
+                    </section>
+                </article>
+                <form>
+                    <fieldset>
+                        <legend>Choose your favorite city</legend>
+                
+                        <input type="radio" id="Hopa" name="city">
+                        <label for="Hopa">Hopa</label><br/>
+                
+                        <input type="radio" id="Murgul" name="city">
+                        <label for="Murgul">Murgul</label><br/>
+                
+                        <input type="radio" id="Arhavi" name="city">
+                        <label for="Arhavi">Arhavi</label><br/>
+                        <input type="radio" id="Kemalpasa" name="city">
+                        <label for="Kemalpasa">Kemalpasa</label><br/>
+                            <legend>LOG IN</legend>
+                    
+                </form>
+                <form action="/action_page.php">
+                    User ID:<br>
+                    <input type="text" name="User ID" value=""><br>
+                    Password:<br>
+                    <input type="text" name="Password" value=""><br><br>
+                    <button onclick="emmi()">Submit</button>
+                    <script>
+                            console.log("Running script in header");
+                            function emmi() {alert("Wrong password or user ID")}
+                                          
+                       </script>
+
+
+                    
+                  </form>
+                
+
+</p>
+  <div class='time-frame'>
+	<div id='tarih-bolumu'></div>
+	<div id='saat-bolumu'></div>
+</div>      
+        
+            
+            
+    </div>
+    <div class="mainPage mainFilter"></div>
 </div>
 
-    </nav>
+<address>
+        Mehmet Kocatepe<br/>
+        Çarşı Mahallesi, Cumhuriyet Cd. No:37<br/>
+        Artvin<br/>
+        Turkey<br/>
+        +541-212-2368<br/>
+        Email: <a href="mailto:artvin@artvin.bel.tr">artvin@artvin.bel.trm</a><br/>
+      </address>
+      <footer>
+      <header>
+        <span>Hours</span>
+    </header>
+        <p>MON-FRI: 8:00am-5:00pm</p>
+
+    </footer>
+    
+        
+        
+
+    
 </body>
 </html>
