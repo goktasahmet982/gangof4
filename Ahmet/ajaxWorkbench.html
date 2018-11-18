@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>jQuery.getJSON demo</title>
+    <style>
+        img {
+            height: 100px;
+            float: left;
+        }
+        .chartContainer {
+             background-color: #000;width: 400px;
+            height: 400px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
+    <script>
+        // Chart.defaults.global = {
+        //         // Boolean - Whether to animate the chart
+        //         animation: true,
+
+        //         // Number - Number of animation steps
+        //         animationSteps: 60,
+
+        //         // String - Animation easing effect
+        //         // Possible effects are:
+        //         // [easeInOutQuart, linear, easeOutBounce, easeInBack, easeInOutQuad,
+        //         //  easeOutQuart, easeOutQuad, easeInOutBounce, easeOutSine, easeInOutCubic,
+        //         //  easeInExpo, easeInOutBack, easeInCirc, easeInOutElastic, easeOutBack,
+        //         //  easeInQuad, easeInOutExpo, easeInQuart, easeOutQuint, easeInOutCirc,
+        //         //  easeInSine, easeOutExpo, easeOutCirc, easeOutCubic, easeInQuint,
+        //         //  easeInElastic, easeInOutSine, easeInOutQuint, easeInBounce,
+        //         //  easeOutElastic, easeInCubic]
+        //         animationEasing: "easeOutQuart",
+
+        //         // Boolean - If we should show the scale at all
+        //         showScale: true,
+
+        //         // Boolean - If we want to override with a hard coded scale
+        //         scaleOverride: false,
+
+        //         // ** Required if scaleOverride is true **
+        //         // Number - The number of steps in a hard coded scale
+        //         scaleSteps: null,
+        //         // Number - The value jump in the hard coded scale
+        //         scaleStepWidth: null,
+        //         // Number - The scale starting value
+        //         scaleStartValue: null,
+
+        //         // String - Colour of the scale line
+        //         scaleLineColor: "rgba(0,0,0,.1)",
+
+        //         // Number - Pixel width of the scale line
+        //         scaleLineWidth: 1,
+
+        //         // Boolean - Whether to show labels on the scale
+        //         scaleShowLabels: true,
+
+        //         // Interpolated JS string - can access value
+        //         scaleLabel: "<%=value%>",
+
+        //         // Boolean - Whether the scale should stick to integers, not floats even if drawing space is there
+        //         scaleIntegersOnly: true,
+
+        //         // Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
+        //         scaleBeginAtZero: false,
+
+        //         // String - Scale label font declaration for the scale label
+        //         scaleFontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+
+        //         // Number - Scale label font size in pixels
+        //         scaleFontSize: 12,
+
+        //         // String - Scale label font weight style
+        //         scaleFontStyle: "normal",
+
+        //         // String - Scale label font colour
+        //         scaleFontColor: "#666",
+
+        //         // Boolean - whether or not the chart should be responsive and resize when the browser does.
+        //         responsive: true,
+
+        //         // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+        //         maintainAspectRatio: true,
+
+        //         // Boolean - Determines whether to draw tooltips on the canvas or not
+        //         showTooltips: true,
+
+        //         // Function - Determines whether to execute the customTooltips function instead of drawing the built in tooltips (See [Advanced - External Tooltips](#advanced-usage-custom-tooltips))
+        //         customTooltips: false,
+
+        //         // Array - Array of string names to attach tooltip events
+        //         tooltipEvents: ["mousemove", "touchstart", "touchmove"],
+
+        //         // String - Tooltip background colour
+        //         tooltipFillColor: "rgba(0,0,0,0.8)",
+
+        //         // String - Tooltip label font declaration for the scale label
+        //         tooltipFontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+
+        //         // Number - Tooltip label font size in pixels
+        //         tooltipFontSize: 14,
+
+        //         // String - Tooltip font weight style
+        //         tooltipFontStyle: "normal",
+
+        //         // String - Tooltip label font colour
+        //         tooltipFontColor: "#fff",
+
+        //         // String - Tooltip title font declaration for the scale label
+        //         tooltipTitleFontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+
+        //         // Number - Tooltip title font size in pixels
+        //         tooltipTitleFontSize: 14,
+
+        //         // String - Tooltip title font weight style
+        //         tooltipTitleFontStyle: "bold",
+
+        //         // String - Tooltip title font colour
+        //         tooltipTitleFontColor: "#fff",
+
+        //         // Number - pixel width of padding around tooltip text
+        //         tooltipYPadding: 6,
+
+        //         // Number - pixel width of padding around tooltip text
+        //         tooltipXPadding: 6,
+
+        //         // Number - Size of the caret on the tooltip
+        //         tooltipCaretSize: 8,
+
+        //         // Number - Pixel radius of the tooltip border
+        //         tooltipCornerRadius: 6,
+
+        //         // Number - Pixel offset from point x to tooltip edge
+        //         tooltipXOffset: 10,
+
+        //         // String - Template string for single tooltips
+        //         tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>",
+
+        //         // String - Template string for multiple tooltips
+        //         multiTooltipTemplate: "<%= value %>",
+
+        //         // Function - Will fire on animation progression.
+        //         onAnimationProgress: function () { },
+
+        //         // Function - Will fire on animation completion.
+        //         onAnimationComplete: function () { }
+        //     }
+
+            
+    </script>
+</head>
+
+<body>
+
+
+    <button onclick="testNodeGet()">Run OpenBreweries Get Test</button>
+
+    <button onclick="testNodePost()">USA Financials Post test</button>
+
+    <button onclick="GetFlickerDataAndDisplay()">Run Flicker Test</button>
+
+    <button onclick="testNodePut()">Run Node Put Test</button>
+    
+    <button onclick="drawChart()">Draw Simple Barchart</button>
+    <button onclick="drawLineChart()">Draw LineChart </button>
+  
+    <div id="images"></div>
+    <div id="myChartContainer" class="chartContainer">
+         <canvas id="myChart" width="400" height="400"></canvas>
+    </div>
+    <canvas id="line_chart" height="352" width="705" style="display: block; width: 470px; height: 235px;"></canvas>
+
+    <table id="table"></table>
+    <script>
+        var dataForMultiline = {
+                type:"Line",
+                labels: ["January", "February", "March", "April", "May", "June", "July"],
+                datasets: [
+                    {
+                        label: "My First dataset",
+                        fillColor: "rgba(220,220,220,0.2)",
+                        strokeColor: "rgba(220,220,220,1)",
+                        pointColor: "rgba(220,220,220,1)",
+                        pointStrokeColor: "#fff",
+                        pointHighlightFill: "#fff",
+                        pointHighlightStroke: "rgba(220,220,220,1)",
+                        data: [65, 59, 80, 81, 56, 55, 40]
+                    },
+                    {
+                        label: "My Second dataset",
+                        fillColor: "rgba(151,187,205,0.2)",
+                        strokeColor: "rgba(151,187,205,1)",
+                        pointColor: "rgba(151,187,205,1)",
+                        pointStrokeColor: "#fff",
+                        pointHighlightFill: "#fff",
+                        pointHighlightStroke: "rgba(151,187,205,1)",
+                        data: [28, 48, 40, 19, 86, 27, 90]
+                    }
+                ]
+            };
+
+           
+        var barchartData=  {
+                type: 'bar',
+                data: {
+                    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                    datasets: [{
+                        label: '# of Votes',
+                        data: [12, 19, 3, 5, 2, 3],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            };
+        var lineData = {
+                type: 'line',
+                  data: {
+                labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+                options: {
+                    elements: {
+                        line: {
+                            tension: 0, // disables bezier curves
+                        }
+                    }
+                }
+            };
+
+        function drawMultiline(){
+            let ctx = document.getElementById("myChart").getContext("2d");
+            let newChart = new Chart(ctx,dataForMultiline);
+        }
+        function drawLineChart(){
+            
+            let ctx = document.getElementById("line_chart").getContext('2d');
+
+            var myChart = new Chart(ctx, lineData);
+        //     let ctx = document.getElementById("myChart").getContext('2d');
+        //     lineData.data =  [{
+        //         x: 10,
+        //         y: 20
+        //     }, {
+        //         x: 15,
+        //         y: 10
+        //     }];
+
+        //    var myChart =  new Chart(ctx, lineData);
+              
+        }
+        function drawChart(){
+            let ctx = document.getElementById("myChart").getContext('2d');
+           
+            var myChart = new Chart(ctx, barchartData);
+        }
+
+        //keyToHeadingArray is a map of object key to column header
+        function DisplayJSONobjectArrayAsTable(arrayOfObjects, elementID, keyToHeadingArray) {
+            let innerHTML = "";
+            let keys = [];
+            if (arrayOfObjects.length > 0) {
+
+                //write head
+                innerHTML += "<thead><tr>";
+                keys = Object.keys(arrayOfObjects[0]);
+                for (key = 0; key < keys.length; key++) {
+                    let columnHeading = keys[key];
+                    try {
+                        if (keyToHeadingArray) {
+                            columnHeading = keyToHeadingArray[columnHeading];
+                        }
+                    }
+                    catch (err) {
+                        console.log(err);
+                    }
+                    innerHTML += "<th>" + columnHeading + "</th>";
+
+
+                }
+                innerHTML += "</tr></thead>";
+
+                //write body
+                innerHTML += "<tbody>";
+                for (i = 0; i < arrayOfObjects.length; i++) {
+                    let currentObject = arrayOfObjects[i];
+                    innerHTML += "<tr>";
+                    for (j = 0; j < keys.length; j++) {
+                        let currentValue = currentObject[keys[j]];
+                        innerHTML += "<td>" + currentValue + "</td>";
+                    }
+                    innerHTML += "</tr>";
+
+                    // innerHTML += "<li>"+ arrayOfstring[i] + "</li>";
+
+                }
+
+                innerHTML += "</tbody>";
+
+            }
+
+
+            document.getElementById(elementID).innerHTML = innerHTML;
+            $('#' + elementID).DataTable();
+        }
+
+        //gets are often pretty strai
+        function testNodeGet() {
+            $.getJSON("https://api.openbrewerydb.org/breweries", function (data, status, xhr) {
+                
+                let tableHeadings = {
+
+                    "name": "User Name",
+                    "password": "Password",
+                    "profession": "Profession",
+                    "id": "ID"
+                };
+                
+  
+
+                DisplayJSONobjectArrayAsTable(data, "table", tableHeadings);
+
+                let pretyJSON = JSON.stringify(data, null, 2);
+                $('#images').html("<pre>" + pretyJSON + "</pre>");
+            });
+
+        }
+
+        function testNodePost() {
+            //Setup the settings
+            ajaxSetting = getDefaultAjaxSettings();
+            ajaxSetting.method = "POST";
+            ajaxSetting.contentType = "application/json";
+            ajaxSetting.url = "https://api.usaspending.gov/api/v2/bulk_download/list_agencies/";
+            ajaxSetting.data = "{\"agency\": 14}";
+            ajaxSetting.success = function (data, status, xhr) {
+                console.log(status);
+                let prettyText = JSON.stringify(data, null, 2);
+                console.log(prettyText);
+                //Show text as innerhtml of the images element, use preformatted to keep whitespace
+                $('#images').html("<pre>" + prettyText + "</pre>");
+     
+            }
+
+            //Make the call with settings (the .success function will handle the results)
+            jQuery.ajax(ajaxSetting);
+
+        }
+        
+       
+
+//Commented out properties are rarely used, so these aren't being used, but keep around for reference
+        function getDefaultAjaxSettings() {
+            let ajaxSettings = {};
+
+            ajaxSettings.async = true;
+            //;ajaxSettings.beforeSend = function(jqXHR, settings)
+            ajaxSettings.cache = false;
+            ajaxSettings.complete = function (xhr, status) {
+                console.log(status);
+            }
+            ajaxSettings.contentType = 'application/x-www-form-urlencoded; charset=UTF-8';
+            ajaxSettings.crossDomain = true;
+            //ajaxSettings.data = object of key value pairs for creating query string in GET requests
+            //ajaxSettings.dataFilter = function(data, filtertyp) - for processing raw data response
+            ajaxSettings.datatype = "json";//"jsonp text json"; // or xml, html, script, json,jsonp or text
+            ajaxSettings.error = function (xhr, status, error) {
+                console.log(status + " :" + error)
+            };
+            ajaxSettings.global = true;  // trigger ajaxstart, ajaxstop
+            //ajaxSettings.headers = {};
+            //ajaxSettings.ifModified = false;
+            //ajaxSettings.isLocal = true; // for getting local file system data
+            //ajaxSettings.jsonCallback  - function() to call on JSONP request
+            ajaxSettings.method = "GET";
+            //ajaxSettings.mimeType =
+            //ajaxSettings.password = 
+            //ajaxSettings.processData = true;  do you parse the object into a query string...
+            //ajaxSettings.scriptCharset = charset for script requeetss
+            //ajaxSettings.statusCode  -- cool , for overriding status code response type
+            // ajaxSetting.statusCode = {
+            //      404: function() {
+            //              alert( "page not found" );
+            //     }
+            // };
+            ajaxSettings.success = function (data, status, xhr) {  //this is a typical success hanlder
+                console.log(status);
+                let prettyText = JSON.stringify(data, null, 2);
+                console.log(prettyText);
+            }
+
+            ajaxSettings.timeout = 5000; //timeout in millieseconds
+            ajaxSettings.traditional = false; // set to true to use traditional param serialization
+            ajaxSettings.url = "https://api.usaspending.gov/api/v2/financial_balances/agencies/?funding_agency_id=775&fiscal_year=2017";
+            //ajaxSettings.xhr = function (xhr){}  for overrideing xhr object
+            //ajaxSettings.xhrFields = {withCredentials:true};
+            return ajaxSettings;
+        }
+
+       
+
+        function GetFlickerDataAndDisplay(){
+              var flickerAPI = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+              $.getJSON( flickerAPI, {
+                tags: "mount rainier",
+                tagmode: "any",
+                format: "json"
+              })
+                .done(function( data ) {
+                  $.each( data.items, function( i, item ) {
+                    $( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
+                    if ( i === 3 ) {
+                      return false;
+                    }
+                  });
+                });
+
+             }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<title>Izmir</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<style>
+body, html {
+    height: 100%;
+    font-family: "Inconsolata", sans-serif;
+}
+.bgimg {
+    background-position: center;
+    background-size: cover;
+    background-image: url("izmir1.jpg");
+    min-height: 90%;
+}
+.menu {
+    display: none;
+}
+</style>
+<body>
+
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col s3">
+      <a href="#" class="w3-button w3-block w3-black">HOME</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#about" class="w3-button w3-block w3-black">ABOUT</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#menu" class="w3-button w3-block w3-black">WHERE TO GO?</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#where" class="w3-button w3-block w3-black">CONTACT</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+    <span class="w3-tag">IZMIR Turkey's third largest city</span>
+  </div>
+  
+</header>
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-sand w3-grayscale w3-large">
+
+<!-- About Container -->
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">ABOUT THE CITY</span></h5>
+    <p>Izmir is a city on Turkey’s Aegean coast. Known as Smyrna in antiquity, it was founded by the Greeks, taken over by the Romans and rebuilt by Alexander the Great before becoming part of the Ottoman Empire in the 15th century. Today, its expansive archaeological sites include the Roman Agora of Smyrna, now an open-air museum. The hilltop Kadifekale, or Velvet Castle, built during Alexander’s reign, overlooks the city</p>
+
+ <img src="ephesus.jpg" class="w3-image" style="width:100%">
+
+
+</div>
+
+<!-- Menu Container -->
+<div class="w3-container" id="menu">
+  <div class="w3-content" style="max-width:700px">
+ 
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Where to go?</span></h5>
+  
+    <div class="w3-row w3-center w3-card w3-padding">
+      <a href="javascript:void(0)" onclick="openMenu(event, 'In town');" id="myLink">
+        <div class="w3-col s6 tablink">In town</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Out of town');">
+        <div class="w3-col s6 tablink">Out of town</div>
+      </a>
+    </div>
+
+    <div id="In town" class="w3-container menu w3-padding-48 w3-card">
+      <h5>Konak Square</h5>
+      <p class="w3-text-grey">The square is where the iconic Izmir clock tower is located and a must see if you are in town for a day. It’s a great place to rest and watch the kids chase or feed the pigeons.</p><br>
+    
+      <h5>Saat Kulesi (Clock Tower)</h5>
+      <p class="w3-text-grey">This elegant monument which was built in 1901, decorates Konak Square and has become the symbol of the city of Izmir.</p><br>
+    
+      <h5>Kordonboyu</h5>
+      <p class="w3-text-grey">Kordonboyu, where İzmir meets with the sea, where you can watch the sunset or lay down on the grass during summer and spring is among the symbols of İzmir. The grass area starting from the Gündoğdu Square at Kordon is a meeting point where the youth comes together, sings and socialize while drinking something.</p><br>
+    
+      <h5>Ataturk Museum</h5>
+      <p class="w3-text-grey">A must visit for those who are interested in the life story of modern Turkey's founder Mustafa Kemal Atatürk. The small museum gives you a pretty good insight into the stages of life and remarkable successes of the great Turkish leader.</p><br>
+    
+      <h5>Tarihi Asansor</h5>
+      <p class="w3-text-grey">This is a very simple but a nice and clean place run by İzmir Metropolitan Municipality.</p>
+    </div>
+
+    <div id="Out of town" class="w3-container menu w3-padding-48 w3-card">
+      <h5>Pamukkale and Hierapolis</h5>
+      <p class="w3-text-grey">Marvel at the petrified lime cascades of Pamukkale and the ancient city of Hierapolis during this guided day trip from Izmir. This tour not only journeys to the stunning natural wonder of Pamukkale, but will venture to fascinating Roman ruins at Hierapolis built during the 2nd century AD. Here you will see the Theater and the Necropolis, the biggest ancient graveyard in Anatolia</p><br>
+    
+      <h5>Pergamum and Asklepion Tour from Izmir</h5>
+      <p class="w3-text-grey">See unbelievable ruins and some of Turkey’s best archaeological sites during this guided day trip to Pergamum and Asklepion from Izmir. Discover the 4th century city of Pergamum home to one of the largest ancient libraries, the impressive Altar of Zeus and the inclined Theatre of Anatolia. You will see the Roman Medical Center remnants of Asklepion where Galen, a famous physician, completed his finest work.</p><br>
+    
+      <h5>Ephesus and St. Mary's House Day Trip from Izmir</h5>
+      <p class="w3-text-grey">After a convenient pickup from your Izmir hotel, enjoy the scenic journey to Ephesus in an air-conditioned coach. Briefly stop at Ayasuluk Hill, currently the excavation site of an impressive fortress, and the fourth-century St. John’s Basilica, believed to be the final resting place of John the Apostle.</p><br>
+    
+      <h5>Trajan Fountain</h5>
+<<<<<<< HEAD
+      <p class="w3-text-grey">The trajak Fountain is one of the reconstructed ruins in Ehpesus.Ehpesus is the greatest place to visit</p><br>
+=======
+      <p class="w3-text-grey">The trajak Fountain is one of the reconstructed ruins in Ehpesus. Ehpesus is very popular touristic place around.</p><br>
+>>>>>>> 78e6ad5308b2d15363d216610709fd689849c7f8
+    
+      <h5>BOAT TRIP FROM IZMIR</h5>
+      <p class="w3-text-grey">Izmir City Boat trip gives you to relaxation and enjoyable time at the Aegean Sea
+		Day to escape aboard on a wooden boat to discover the blue-turquoise seabed, pristine coves</p>
+    
+</div>
+
+<h2 class="w3-left"></h2>
+
+<div class="w3-content w3-left" style="max-width:500px">
+  <img class="mySlides" src="pam1.jpg" style="width:140%">
+  <img class="mySlides" src="pam2.jpg" style="width:140%">
+  <img class="mySlides" src="pam3.jpg" style="width:140%">
+</div>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+
+
+<!-- Contact/Area Container -->
+<div class="w3-container" id="where" style="padding-bottom:32px;">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">CONTACT</span></h5>
+   
+    <img src="Izmir2.jpg" class="w3-image" style="width:100%">
+    
+    <p><strong>Describe</strong> the reason for contacting:</p>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" value="2017-11-16T20:00"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
+      <p><button class="w3-button w3-black" type="submit">SEND MESSAGE</button></p>
+    </form>
+  </div>
+</div>
+
+<!-- End page content -->
+</div>
+
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+     tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+
+</body>
+</html>
