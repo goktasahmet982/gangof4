@@ -1,2 +1,0 @@
-############Mazhar Turker Orhan######
-
