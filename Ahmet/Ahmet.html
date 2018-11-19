@@ -4,8 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+  <script  src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> 
+ 
 <style>
+  
 body, html {
     height: 100%;
     font-family: "Inconsolata", sans-serif;
@@ -135,6 +143,7 @@ body, html {
   <img class="mySlides" src="pam3.jpg" style="width:140%">
 </div>
 
+
 <script>
 var myIndex = 0;
 carousel();
@@ -151,6 +160,7 @@ function carousel() {
     setTimeout(carousel, 2000); // Change image every 2 seconds
 }
 </script>
+
 
 
 
@@ -174,30 +184,92 @@ function carousel() {
     </form>
   </div>
 </div>
-
+<table id="table1">Uninitialized Table</table>
 <!-- End page content -->
 </div>
 
 
-<script>
-// Tabbed Menu
-function openMenu(evt, menuName) {
-  var i, x, tablinks;
-  x = document.getElementsByClassName("menu");
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < x.length; i++) {
-     tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
-  }
-  document.getElementById(menuName).style.display = "block";
-  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
-}
-document.getElementById("myLink").click();
-</script>
+
+
+
+
+
 
 <button onclick="testNodeGet()">Get more information</button>
 
+<script>
+
+ function DisplayJSONobjectArrayAsTable(arrayOfObjects, elementID, keyToHeadingArray) {
+                let innerHTML = "";
+                let keys = [];
+                if (arrayOfObjects.length > 0) {
+
+                    //write head
+                    innerHTML += "<thead><tr>";
+                    keys = Object.keys(arrayOfObjects[0]);
+                    for (key = 0; key < keys.length; key++) {
+                        let columnHeading =  keys[key];
+                        try{
+                            if(keyToHeadingArray){
+                                columnHeading= keyToHeadingArray[columnHeading];
+                            }
+                        }
+                        catch(err){
+                            console.log(err);
+                        }
+                         innerHTML += "<th>" + columnHeading + "</th>";
+                                
+                        
+                    }
+                    innerHTML += "</tr></thead>";
+
+                    //write body
+                    innerHTML += "<tbody>";
+                    for (i = 0; i < arrayOfObjects.length; i++) {
+                        let currentObject = arrayOfObjects[i];
+                        innerHTML += "<tr>";
+                        for (j = 0; j < keys.length; j++) {
+                            let currentValue = currentObject[keys[j]];
+                            innerHTML += "<td>" + currentValue + "</td>";
+                        }
+                        innerHTML += "</tr>";
+
+                        // innerHTML += "<li>"+ arrayOfstring[i] + "</li>";
+
+                    }
+
+                    innerHTML += "</tbody>";
+
+                }
+
+
+                document.getElementById(elementID).innerHTML = innerHTML;
+            }
+		
+
+
+  // Tabbed Menu
+  function openMenu(evt, menuName) {
+    var i, x, tablinks;
+    x = document.getElementsByClassName("menu");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < x.length; i++) {
+       tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+    }
+    document.getElementById(menuName).style.display = "block";
+    evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+  }
+  document.getElementById("myLink").click();
+
+  
+$.getJSON("http://127.0.0.1:8080/linedata",function(data){
+  DisplayJSONobjectArrayAsTable(data,"table1");
+  $('#table1').DataTable();
+});
+
+  </script>
 </body>
 </html>
