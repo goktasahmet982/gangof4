@@ -1,0 +1,25 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "restAPI node",
+  "main": "server.js",
+  "dependencies": {
+    "@types/bootstrap": "^4.1.2",
+    "@types/jquery": "^3.3.1",
+    "body-parser": "^1.18.3",
+    "bootstrap": "^4.1.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.3",
+    "fs": "0.0.1-security",
+    "jquery": "^3.3.1",
+    "moment": "^2.22.2",
+    "popper": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "\"echo \\\"Error: no test specified\\\" && exit 1\"",
+    "start": "node server.js"
+  },
+  "author": "rick sprenkle",
+  "license": "ISC"
+}
