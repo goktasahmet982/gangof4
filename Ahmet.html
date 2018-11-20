@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>Izmir</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -20,6 +20,7 @@ body, html {
     display: none;
 }
 </style>
+
 <body>
 
 <!-- Links (sit on top) -->
@@ -61,6 +62,7 @@ body, html {
 
 
 </div>
+
 
 <!-- Menu Container -->
 <div class="w3-container" id="menu">
@@ -117,6 +119,14 @@ body, html {
     
 </div>
 
+<button type="button" class="btn btn-light">
+  <a href="https://www.google.com/maps/d/u/0/viewer?ll=38.44770700000002%2C27.18337299999996&spn=0.012654%2C0.027874&hl=en&msa=0&z=16&ie=UTF8&mid=1d9fFjlWjGLtNCX0XToxCFUMvhd0"
+      onclick="openLink()">Click to see where Izmir located</a></button>
+
+
+
+
+
 <h2 class="w3-left"></h2>
 
 <div class="w3-content w3-left" style="max-width:500px">
@@ -128,7 +138,6 @@ body, html {
 <script>
 var myIndex = 0;
 carousel();
-
 function carousel() {
     var i;
     var x = document.getElementsByClassName("mySlides");
@@ -143,12 +152,17 @@ function carousel() {
 </script>
 
 
+
 <!-- Contact/Area Container -->
 <div class="w3-container" id="where" style="padding-bottom:32px;">
   <div class="w3-content" style="max-width:700px">
     <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">CONTACT</span></h5>
    
     <img src="Izmir2.jpg" class="w3-image" style="width:100%">
+    
+
+
+
     
     <p><strong>Describe</strong> the reason for contacting:</p>
     <form action="/action_page.php" target="_blank">
@@ -181,6 +195,8 @@ function openMenu(evt, menuName) {
 }
 document.getElementById("myLink").click();
 </script>
+
+<button onclick="testNodeGet()">Get more information</button>
 
 </body>
 </html>
