@@ -1,0 +1,20 @@
+{
+    "user1" : {
+       "name" : "Ahmet",
+       "password" : "kor23foo",
+       "profession" : "software engineer",
+       "id": 1
+    },
+    "user2" : {
+       "name" : "Turker",
+       "password" : "tur3kklm32",
+       "profession" : "Graffic designer",
+       "id": 2
+    },
+    "user3" : {
+       "name" : "Kadir",
+       "password" : "Kadir109222c",
+       "profession" : "Electrical Engineer",
+       "id": 3
+    }
+ }
