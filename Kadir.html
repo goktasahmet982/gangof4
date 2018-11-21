@@ -91,6 +91,7 @@ img {vertical-align: middle;}
   top: 0;
 }
 
+
 /* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
@@ -166,6 +167,64 @@ img {vertical-align: middle;}
 </div>
 
 <script>
+
+src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous">
+</script>
+<script  src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script>
+ 
+
+<table id="my table"></table>
+
+  function DisplayJSONobjectArrayAsTable(arrayOfObjects, elementID, keyToHeadingArray) {
+                let innerHTML = "";
+                let keys = [];
+                if (arrayOfObjects.length > 0) {
+
+                    //write head
+                    innerHTML += "<thead><tr>";
+                    keys = Object.keys(arrayOfObjects[0]);
+                    for (key = 0; key < keys.length; key++) {
+                        let columnHeading =  keys[key];
+                        try{
+                            if(keyToHeadingArray){
+                                columnHeading= keyToHeadingArray[columnHeading];
+                            }
+                        }
+                        catch(err){
+                            console.log(err);
+                        }
+                         innerHTML += "<th>" + columnHeading + "</th>";
+                                
+                        
+                    }
+                    innerHTML += "</tr></thead>";
+
+                    //write body
+                    innerHTML += "<tbody>";
+                    for (i = 0; i < arrayOfObjects.length; i++) {
+                        let currentObject = arrayOfObjects[i];
+                        innerHTML += "<tr>";
+                        for (j = 0; j < keys.length; j++) {
+                            let currentValue = currentObject[keys[j]];
+                            innerHTML += "<td>" + currentValue + "</td>";
+                        }
+                        innerHTML += "</tr>";
+
+                        // innerHTML += "<li>"+ arrayOfstring[i] + "</li>";
+
+                    }
+
+                    innerHTML += "</tbody>";
+
+                }
+
+
+                document.getElementById(elementID).innerHTML = innerHTML;
+            }
+		
 var slideIndex = 1;
 showSlides(slideIndex);
 
