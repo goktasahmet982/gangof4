@@ -1,0 +1,149 @@
+{
+    "query": {
+        "count": 1,
+        "created": "2018-11-21T01:49:49Z",
+        "lang": "en-us",
+        "results": {
+            "channel": {
+                "units": {
+                    "distance": "mi",
+                    "pressure": "in",
+                    "speed": "mph",
+                    "temperature": "F"
+                },
+                "title": "Yahoo! Weather - Nome, AK, US",
+                "link": "http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-2460286/",
+                "description": "Yahoo! Weather for Nome, AK, US",
+                "language": "en-us",
+                "lastBuildDate": "Tue, 20 Nov 2018 04:49 PM AKST",
+                "ttl": "60",
+                "location": {
+                    "city": "Nome",
+                    "country": "United States",
+                    "region": " AK"
+                },
+                "wind": {
+                    "chill": "25",
+                    "direction": "90",
+                    "speed": "7"
+                },
+                "atmosphere": {
+                    "humidity": "90",
+                    "pressure": "996.0",
+                    "rising": "0",
+                    "visibility": "15.8"
+                },
+                "astronomy": {
+                    "sunrise": "10:50 am",
+                    "sunset": "4:43 pm"
+                },
+                "image": {
+                    "title": "Yahoo! Weather",
+                    "width": "142",
+                    "height": "18",
+                    "link": "http://weather.yahoo.com",
+                    "url": "http://l.yimg.com/a/i/brand/purplelogo//uh/us/news-wea.gif"
+                },
+                "item": {
+                    "title": "Conditions for Nome, AK, US at 04:00 PM AKST",
+                    "lat": "64.499474",
+                    "long": "-165.405792",
+                    "link": "http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-2460286/",
+                    "pubDate": "Tue, 20 Nov 2018 04:00 PM AKST",
+                    "condition": {
+                        "code": "26",
+                        "date": "Tue, 20 Nov 2018 04:00 PM AKST",
+                        "temp": "30",
+                        "text": "Cloudy"
+                    },
+                    "forecast": [
+                        {
+                            "code": "28",
+                            "date": "20 Nov 2018",
+                            "day": "Tue",
+                            "high": "33",
+                            "low": "27",
+                            "text": "Mostly Cloudy"
+                        },
+                        {
+                            "code": "28",
+                            "date": "21 Nov 2018",
+                            "day": "Wed",
+                            "high": "27",
+                            "low": "22",
+                            "text": "Mostly Cloudy"
+                        },
+                        {
+                            "code": "30",
+                            "date": "22 Nov 2018",
+                            "day": "Thu",
+                            "high": "21",
+                            "low": "13",
+                            "text": "Partly Cloudy"
+                        },
+                        {
+                            "code": "32",
+                            "date": "23 Nov 2018",
+                            "day": "Fri",
+                            "high": "13",
+                            "low": "8",
+                            "text": "Sunny"
+                        },
+                        {
+                            "code": "23",
+                            "date": "24 Nov 2018",
+                            "day": "Sat",
+                            "high": "9",
+                            "low": "4",
+                            "text": "Breezy"
+                        },
+                        {
+                            "code": "26",
+                            "date": "25 Nov 2018",
+                            "day": "Sun",
+                            "high": "23",
+                            "low": "9",
+                            "text": "Cloudy"
+                        },
+                        {
+                            "code": "26",
+                            "date": "26 Nov 2018",
+                            "day": "Mon",
+                            "high": "21",
+                            "low": "19",
+                            "text": "Cloudy"
+                        },
+                        {
+                            "code": "26",
+                            "date": "27 Nov 2018",
+                            "day": "Tue",
+                            "high": "24",
+                            "low": "21",
+                            "text": "Cloudy"
+                        },
+                        {
+                            "code": "26",
+                            "date": "28 Nov 2018",
+                            "day": "Wed",
+                            "high": "28",
+                            "low": "23",
+                            "text": "Cloudy"
+                        },
+                        {
+                            "code": "26",
+                            "date": "29 Nov 2018",
+                            "day": "Thu",
+                            "high": "31",
+                            "low": "28",
+                            "text": "Cloudy"
+                        }
+                    ],
+                    "description": "<![CDATA[<img src=\"http://l.yimg.com/a/i/us/we/52/26.gif\"/>\n<BR />\n<b>Current Conditions:</b>\n<BR />Cloudy\n<BR />\n<BR />\n<b>Forecast:</b>\n<BR /> Tue - Mostly Cloudy. High: 33Low: 27\n<BR /> Wed - Mostly Cloudy. High: 27Low: 22\n<BR /> Thu - Partly Cloudy. High: 21Low: 13\n<BR /> Fri - Sunny. High: 13Low: 8\n<BR /> Sat - Breezy. High: 9Low: 4\n<BR />\n<BR />\n<a href=\"http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-2460286/\">Full Forecast at Yahoo! Weather</a>\n<BR />\n<BR />\n<BR />\n]]>",
+                    "guid": {
+                        "isPermaLink": "false"
+                    }
+                }
+            }
+        }
+    }
+}

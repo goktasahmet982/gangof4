@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html>
-<title>W3.CSS Template</title>
+<title>homework</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -164,7 +164,9 @@ img {vertical-align: middle;}
   <span class="dot" onclick="currentSlide(2)"></span> 
   <span class="dot" onclick="currentSlide(3)"></span> 
 </div>
+<script>
 
+</script>
 <script>
 var slideIndex = 1;
 showSlides(slideIndex);
@@ -202,6 +204,10 @@ function showSlides(n) {
 
 
 <!-- Page content -->
+
+<!-- weather forecast -->
+<div id="cont_33d29383ca9778fbd1ed2993ce12c7bf"><script type="text/javascript" async src="https://www.theweather.com/wid_loader/33d29383ca9778fbd1ed2993ce12c7bf"></script></div>
+<div id="band" class="container text-center">
 <div class="w3-content" style="max-width:1100px">
 
   <!-- About Section -->
@@ -261,15 +267,75 @@ function showSlides(n) {
       <p><button class="w3-button w3-light-grey w3-section" type="submit">SEND MESSAGE</button></p>
     </form>
   </div>
-  
+  <table id="my table"></table>
 <!-- End page content -->
 </div>
 
+<button onclick="testNodeGet()">Get weather info</button>
+<script>
+function DisplayJSONobjectArrayAsTable(arrayOfObjects, elementID, keyToHeadingArray) {
+                let innerHTML = "";
+                let keys = [];
+                if (arrayOfObjects.length > 0) {
+
+                    //write head
+                    innerHTML += "<thead><tr>";
+                    keys = Object.keys(arrayOfObjects[0]);
+                    for (key = 0; key < keys.length; key++) {
+                        let columnHeading =  keys[key];
+                        try{
+                            if(keyToHeadingArray){
+                                columnHeading= keyToHeadingArray[columnHeading];
+                            }
+                        }
+                        catch(err){
+                            console.log(err);
+                        }
+                         innerHTML += "<th>" + columnHeading + "</th>";
+                                
+                        
+                    }
+                    innerHTML += "</tr></thead>";
+
+                    //write body
+                    innerHTML += "<tbody>";
+                    for (i = 0; i < arrayOfObjects.length; i++) {
+                        let currentObject = arrayOfObjects[i];
+                        innerHTML += "<tr>";
+                        for (j = 0; j < keys.length; j++) {
+                            let currentValue = currentObject[keys[j]];
+                            innerHTML += "<td>" + currentValue + "</td>";
+                        }
+                        innerHTML += "</tr>";
+
+                        // innerHTML += "<li>"+ arrayOfstring[i] + "</li>";
+
+                    }
+
+                    innerHTML += "</tbody>";
+
+                }
+
+
+                document.getElementById(elementID).innerHTML = innerHTML;
+            }
+		
+
+
+
+</script>
 <!-- Footer -->
 <footer class="w3-center w3-light-grey w3-padding-32">
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">kdrkcy</a></p>
 </footer>
+<script>
+$.getJSON("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22nome%2C%20ak%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys",function(data){
+  DisplayJSONobjectArrayAsTable(data,"my table");
+  $('#my table').DataTable();
+});
 
+
+</script>
 </body>
 =======
 <html lang="en">
